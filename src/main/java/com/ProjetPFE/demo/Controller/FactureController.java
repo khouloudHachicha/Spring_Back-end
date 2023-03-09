@@ -20,8 +20,8 @@ public class FactureController {
     }
 
     @GetMapping("/{id}")
-    public Facture getFactureById(@PathVariable Long id) {
-        return factureDao.findById(id)
+    public Facture getFactureById(@PathVariable Long num) {
+        return factureDao.findById(String.valueOf(num))
                 .orElseThrow(() -> new ResourceNotFoundException("Facture"));
     }
 }
